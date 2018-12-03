@@ -9,7 +9,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import com.google.android.flexbox.FlexboxLayoutManager
 import kotlinx.android.synthetic.main.fragment_main.*
+import com.google.android.flexbox.JustifyContent
+import com.google.android.flexbox.FlexDirection
+
+
 
 class MainFragment : Fragment() {
 
@@ -17,9 +22,15 @@ class MainFragment : Fragment() {
         val view =  inflater.inflate(R.layout.fragment_main, container, false)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view_list)
 
-        val list = (0..20).toList().toIntArray().toCollection(ArrayList())
+        val list = (0..33).toList().toIntArray().toCollection(ArrayList())
         recyclerView.adapter = FlexBoxAdapter(list)
-        recyclerView.layoutManager = LinearLayoutManager(view.context, LinearLayout.VERTICAL, false)
+//        recyclerView.layoutManager = LinearLayoutManager(view.context, LinearLayout.VERTICAL, false)
+
+        val flexLayoutManager = FlexboxLayoutManager(context)
+        flexLayoutManager.flexDirection = FlexDirection.ROW
+        flexLayoutManager.justifyContent = JustifyContent.FLEX_START
+        recyclerView.layoutManager = flexLayoutManager
+        recyclerView.layoutManager =  flexLayoutManager
 
         return view
     }

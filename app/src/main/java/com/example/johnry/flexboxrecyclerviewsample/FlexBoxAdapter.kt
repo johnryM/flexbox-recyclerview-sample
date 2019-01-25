@@ -15,11 +15,12 @@ class FlexBoxAdapter(val items: ArrayList<Int>) : RecyclerView.Adapter<FlexBoxAd
     }
 
     override fun getItemViewType(position: Int): Int {
-        return if (position == 5) {
-            ONE_PER_ROW
-        } else {
-            TWO_PER_ROW
-        }
+//        return if (position == 5) {
+//            ONE_PER_ROW
+//        } else {
+//            TWO_PER_ROW
+//        }
+        return super.getItemViewType(position)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FlexViewHolder {

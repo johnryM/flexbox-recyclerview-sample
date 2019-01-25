@@ -13,7 +13,7 @@ import com.google.android.flexbox.FlexboxLayoutManager
 import kotlinx.android.synthetic.main.fragment_main.*
 import com.google.android.flexbox.JustifyContent
 import com.google.android.flexbox.FlexDirection
-
+import com.google.android.flexbox.FlexboxItemDecoration
 
 
 class MainFragment : Fragment() {
@@ -31,6 +31,9 @@ class MainFragment : Fragment() {
         flexLayoutManager.justifyContent = JustifyContent.FLEX_START
         recyclerView.layoutManager = flexLayoutManager
         recyclerView.layoutManager =  flexLayoutManager
+        val fli = FlexboxItemDecoration(activity)
+        fli.setDrawable(resources.getDrawable(R.drawable.divider))
+        recyclerView.addItemDecoration(fli)
 
         return view
     }

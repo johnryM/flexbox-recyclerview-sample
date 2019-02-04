@@ -24,7 +24,6 @@ class MainFragment : Fragment() {
 
         val list = (0..33).toList().toIntArray().toCollection(ArrayList())
         recyclerView.adapter = FlexBoxAdapter(list)
-//        recyclerView.layoutManager = LinearLayoutManager(view.context, LinearLayout.VERTICAL, false)
 
         val flexLayoutManager = FlexboxLayoutManager(context)
         flexLayoutManager.flexDirection = FlexDirection.ROW
